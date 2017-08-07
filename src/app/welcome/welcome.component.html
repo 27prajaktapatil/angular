@@ -1,0 +1,43 @@
+<md-sidenav-container class="example-sidenav-fab-container">
+  <md-sidenav #sidenav mode="push" opened="true">
+    Jolly good!
+    <button md-mini-fab class="example-fab" (click)="sidenav.toggle()">
+      <md-icon>first_page</md-icon>
+    </button>
+  </md-sidenav>
+
+  <div class="example-sidenav-content">
+    <button type="button" md-button (click)="sidenav.open()">
+      Open sidenav
+    </button>
+    <button type="button" md-button (click)="sendMail()">
+      Send Mail
+    </button>
+  </div>
+  <!--<div>
+    <md-tab-group>
+      <md-tab label="Tab 1">
+        <div>
+          <button type="button" md-button>
+      Simple card of tab 1
+    </button>
+        </div>
+      </md-tab>
+      <md-tab label="Tab 2">
+        <div>
+          <button type="button" md-button>
+      Simple card of tab 2
+    </button>
+        </div>
+      </md-tab>
+    </md-tab-group>
+  </div>-->
+  <nav md-tab-nav-bar>
+    <a md-tab-link *ngFor="let link of navLinks" [routerLink]="link.path"  routerLinkActive #rla="routerLinkActive">
+    {{tabLink.path}}
+  </a>
+  </nav>
+
+
+</md-sidenav-container>
+  <router-outlet></router-outlet>
